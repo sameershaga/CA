@@ -1,0 +1,31 @@
+ORG FE0 
+begin, LOADI current
+subt max
+skipcond 800
+jump gotonext
+loadi current
+store max
+gotonext, load current
+SUBT LAST
+SKIPCOND 400
+JUMP ADDITION
+JUMP EXIT
+
+ADDITION, LOAD current
+add one
+store current
+jump begin
+
+EXIT, LOAD max
+OUTPUT
+halt
+
+one, DEC 1
+current, HEX FF6
+max,dec -1
+LAST, HEX FFF
+V, DEC 10
+W, DEC 20
+X, DEC 30
+Y, DEC 5
+Z, DEC 4
